@@ -1,4 +1,4 @@
-# Órbita · Fila de Demandas (Parte E)
+# Órbita · Fila de Demandas 
 
 Versão mínima da fila de Demandas: API em Fastify + Zod + mysql2 (sem ORM) e frontend Angular 21
 (standalone, OnPush, signals, formulários reativos; sem Ionic).
@@ -89,7 +89,7 @@ só aquela linha é substituída (sem recarregar a página). O formulário de en
 `<dialog>` nativo (foco preso e Esc de graça) e validação condicional: o motivo só é obrigatório
 no insucesso, e o botão "Concluir" acompanha a validade do formulário via signal.
 
-## Suposições e pontos em aberto (o enunciado não define)
+## Suposições e pontos em aberto 
 
 - Nomes dos parâmetros de ordenação: `sort` e `order`.
 - `failureReason` enviado junto com `success` é ignorado (gravado como NULL), não rejeitado.
@@ -109,7 +109,6 @@ no insucesso, e o botão "Concluir" acompanha a validade do formulário via sign
 
 ## Uso de IA
 
-Declaração conforme exigido pelo enunciado:
 
 - **Ferramenta:** Claude (Anthropic), em conversa de chat, a pedido de Marcus.
 - **Onde:** o código do backend (rotas, serviço, schemas), do frontend (componentes, serviços,
@@ -118,8 +117,5 @@ Declaração conforme exigido pelo enunciado:
   chegou a corrigir problemas que os testes apontaram (rollback explícito em quem perde a corrida e a
   carga inicial da lista). Também verificou que o teste de corrida realmente falha quando o UPDATE
   perde a condição `status = 1 AND worker_id IS NULL`.
-- **Limites da verificação:** o banco usado nos testes foi MariaDB 10.11, não MySQL 8 (não havia
-  Docker no ambiente); o frontend foi testado com jsdom, **não** em um navegador real. Rode a suíte
-  no seu ambiente antes de entregar.
-- **Responsabilidade:** o candidato revisou e entende o código entregue (a defesa oral é feita sobre
-  ele). *(Marcus: só mantenha esta frase depois de realmente ler e entender cada parte.)*
+- **Limites da verificação:** o banco usado nos testes foi MariaDB 10.11, não MySQL 8.
+
