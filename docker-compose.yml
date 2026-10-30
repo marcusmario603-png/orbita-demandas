@@ -1,0 +1,19 @@
+services:
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: orbita
+      MYSQL_USER: orbita
+      MYSQL_PASSWORD: orbita
+      TZ: UTC
+    ports:
+      - "3306:3306"
+    volumes:
+      # Executados em ordem alfabética, só na primeira criação do volume.
+      - ./db:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uorbita", "-porbita"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
